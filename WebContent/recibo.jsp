@@ -5,13 +5,13 @@
 <html>
 <head>
 
-<link
-	href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Oswald"
+<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Oswald|Francois+One"
 	rel="stylesheet">
+	<link rel="Shortcut icon" href="dt.png">
 <style type="text/css">
 body {
 	background:
-		url('https://pt.best-wallpaper.net/wallpaper/1366x768/1309/Chicago-Illinois-USA-city-night-skyscraper-buildings-river-lights_1366x768.jpg');
+		url('background.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
@@ -52,12 +52,14 @@ body {
 }
 
 .titulo {
-	font-family: 'Allerta Stencil', cursive;
+	font-family: 'Francois One', sans-serif;
 	font-size: 35px;
 	text-transform: uppercase;
 }
+branco {color: #fff;}
+
 </style>
-<title>Novo Recibo</title>
+<title>Recibo</title>
 </head>
 <body>
 	<center>
@@ -68,9 +70,8 @@ body {
 				Recibo_____________R$ ${recibo.valor}</div>
 			<br> <br> 
 			<div style="width: 80%; padding: 10%;">
-				Eu, Fulano da Silva Dono do Programa, inscrito no CPF 000.000.000-00
-				e no RG 000.000, brasileiro, residente à Rua Tal Tal Tal, Bairro Tão
-				Tão Distante, Rio Tinto - Pb, recebi de <b>${recibo.nome }, a
+				Eu, ${recibo.proprietario.nome}, inscrito no CPF ${recibo.proprietario.cpf}
+				e no RG ${recibo.proprietario.rg}, brasileiro, residente à ${recibo.proprietario.endereco}, recebi de <b>${recibo.nome}, a
 					importância de R$ ${recibo.valor}, referente ao pagamento de
 					${recibo.produto }. <br> <br> <br>
 					
@@ -78,7 +79,8 @@ body {
 					<br> <br> <br>
 
 					________________________________________ 
-						<br> 	Fulano da Silva Dono do Programa <br><br><br>
+						<br> 	${recibo.proprietario.nome} <br>
+								${recibo.proprietario.cpf}<br><br>
 			</div>
 		</div>
 	</center>

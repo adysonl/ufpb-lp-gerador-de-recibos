@@ -4,13 +4,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Recibo {
+	private Usuario proprietario;
 	private String cod = "0";
 	private double valor = 0;
 	private String nome = "_______________________________________________";
 	private String data;
 	private String produto = "_________________________________________";
 
-	public Recibo(String nome, double valor, String produto, int contador) {
+	public Recibo(Usuario proprietario, String nome, double valor, String produto, int contador) {
+		this.proprietario = proprietario;
 		this.valor = valor;
 		this.nome = nome;
 		this.data = dataAtual();
@@ -63,5 +65,13 @@ public class Recibo {
 
 	public void setProduto(String produto) {
 		this.produto = produto;
+	}
+
+	public Usuario getProprietario() {
+		return proprietario;
+	}
+
+	public void setProprietario(Usuario proprietario) {
+		this.proprietario = proprietario;
 	}
 }
